@@ -2,7 +2,7 @@ CXX          = g++
 LDFLAGS      = -Iinclude
 CXXFLAGS     = -pedantic -Wall -Wextra -march=native
 DEBUGFLAGS   = -O0 -ggdb3
-RELEASEFLAGS = -O3 -DNDEBUG -fwhole-program
+RELEASEFLAGS = -O3 -DNDEBUG
 PROFILEFLAGS = $(RELEASFLAGS) -pg
 
 TARGET       = a.out
@@ -17,7 +17,7 @@ PREFIX       = $(DESTDIR)/usr/local
 BINDIR       = $(PREFIX)/bin
 
 
-all: release
+all: debug
 
 release: CXXFLAGS += $(RELEASEFLAGS)
 release: $(TARGET)
